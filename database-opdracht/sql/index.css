@@ -1,0 +1,131 @@
+:root {
+    --background: #0F0F0F;
+}
+body {
+    margin: 0;
+    background: var(--background);
+    color: white;
+    font-family: sans-serif;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+#container {
+    max-width: 90%;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.8s ease forwards;
+}
+#container button {
+    margin-top: 20px;
+    background: #40445a;
+    width: 600px;
+    height: 200px;
+    border: white solid 1px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+#container button:hover {
+    transform: scale(1.1);
+}
+
+/* Overlay */
+#overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+#overlay.active {
+    display: flex;
+    animation: fadeIn 0.4s ease forwards;
+}
+#overlay-content {
+    background: #1a1a1a;
+    border: 1px solid white;
+    border-radius: 12px;
+    width: 700px;
+    max-width: 90vw;
+    max-height: 85vh;
+    padding: 50px 40px 40px;
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+#close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    z-index: 10;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+#close-btn:hover {
+    opacity: 0.7;
+}
+
+/* Form */
+#test-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+#test-form h2 {
+    margin: 0 0 8px 0;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.form-group label {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+.form-group input,
+.form-group textarea {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: white;
+    padding: 10px 14px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+    width: 100%;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: white;
+}
+.form-group textarea {
+    resize: vertical;
+}
+#test-form button[type="submit"] {
+    margin-top: 8px;
+    background: #40445a;
+    border: 1px solid white;
+    border-radius: 8px;
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+#test-form button[type="submit"]:hover {
+    transform: scale(1.03);
+}
