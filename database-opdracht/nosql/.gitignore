@@ -1,1 +1,9 @@
 .env
+vendor/
+db_data/
+mongo_data/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
